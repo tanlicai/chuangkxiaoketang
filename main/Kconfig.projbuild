@@ -695,6 +695,7 @@ endchoice
 
 choice DISPLAY_STYLE
     prompt "Select display style"
+    default USE_EMOTE_MESSAGE_STYLE if BOARD_TYPE_BREAD_COMPACT_WIFI_LCD
     default USE_DEFAULT_MESSAGE_STYLE
     help
         Select display style for Xiaozhi device
@@ -709,7 +710,8 @@ choice DISPLAY_STYLE
         bool "Emote animation style"
         depends on BOARD_TYPE_ESP_BOX || BOARD_TYPE_ESP_BOX_3 \
             || BOARD_TYPE_ESP_VOCAT || BOARD_TYPE_LICHUANG_DEV_S3 \
-            || BOARD_TYPE_ESP_SENSAIRSHUTTLE
+            || BOARD_TYPE_ESP_SENSAIRSHUTTLE \
+            || BOARD_TYPE_BREAD_COMPACT_WIFI_LCD
 endchoice
 
 config USE_MULTILINE_CHAT_MESSAGE
